@@ -1,0 +1,184 @@
+/************Dark/Light Mode's*****************/
+.dark{
+        --bgcolor: #26242e;
+        --text-color:#fff;
+        --shadow-color: rgb(247, 247, 247);
+        --border-color: rgb(255, 255, 255);
+        --color-hover: #bfbfbf;
+        --span-color: rgb(255, 0, 0);
+        --secbgcolor: #54fd;
+}
+.light{
+        --bgcolor: #fff;
+        --text-color: #000;
+        --shadow-color: #bfbfbf;
+        --border-color: #554698;
+        --color-hover: #b7df69;
+        --span-color: #ce2ea6;
+        --secbgcolor: #54fde5;
+}
+.container li button{
+    background: transparent;
+    position: relative;
+    color: #3bd9d9;
+    font-weight: bolder;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    padding: 0.5em 0.5em;
+    border: 2px solid #3bd9d9;
+    border-radius: 32px;
+    transform: translate(0);
+    overflow: hidden;
+    cursor: pointer;
+}
+button::before{
+    content: "";
+    position: absolute;
+    background: #3bd9d9;
+    width: 8px;
+    top: 0;
+    bottom: 0;
+    left: -32px;
+    transform: rotate(-16deg);
+    filter: blur(6px);
+}
+button:hover::before{
+left: calc(1% + 32px);
+transition: 0.75s;  
+}
+/**Estilização do Portfólio**/
+body{
+    background-color: var(--bgcolor);
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    scrollbar-width: 50px;
+    font-family: 'VT323', monospace;
+    color: var(--text-color);
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 30px;
+}
+.card{
+    width: 370px;
+    border-radius: 2vw;
+    border: 4px solid var(--border-color);  
+}
+img{
+    width: 170px;
+    border-radius: 25vw;
+}
+.card .my-information{
+    padding-top: 5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /*alinha horizontalmente por causa do flex-direction que esta em column*/
+}
+.card .my-information img{
+    border: 5px solid var(--border-color);
+}
+.card .my-information .name{
+    font-size: 35px;
+}
+.card .my-information .position{
+    font-size: 23px;
+}
+.card .content{
+    background-color: red;
+    margin-top: 15px;
+    border-radius: 2vw;
+}
+.content .tabs{
+    display: flex;
+}
+.content .tabs .tab{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    cursor: pointer;
+    transition: background-color 0.1s ease-in-out;
+}
+.card .content .tabs img{
+    width: 35px;
+}
+.card .tabs .tab.selected{
+    background-color: var(--bgcolor);
+    border-radius: 2vw;
+}
+.card .info-tabs{
+    background-color: var(--bgcolor);
+    border-radius: 2vw;
+}
+.card .tabs .tab:hover{
+    background-color: var(--color-hover);
+    border-radius: 2vw;
+}
+.info-tabs .information{
+    min-height: 260px;
+    color: var(--text-color);
+    padding: 15px;
+    font-size: 21px;
+    max-height: 80px;
+    overflow-y: auto;
+    padding-right: 25px;    
+}
+.info-tabs .information.selected{
+    display: block;
+}
+.info-tabs .sub-title{
+    font-size: 28px;
+    margin-bottom: 25px;
+    text-align: center;   
+    color: var(--text-color);
+}
+.info-tabs .description span{
+    color: var(--span-color);
+}
+.information{
+    display: flexbox;
+    cursor: pointer;
+}
+.social-network{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+    max-height: 180px;
+    overflow-y: auto;
+}
+.social-network li {
+    border-radius: 2vw;
+    background-color: var(--secbgcolor);
+    width: 250px;
+    display: block;
+    color: var(--text-color);
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    justify-content: center;
+    transition: opacity 0.3s ease-in-out;
+}
+.social-network li img:hover{
+    opacity: 0.7;
+}
+.social-network .github{
+    background-color: #033fe4;
+    border-radius: 2vw;
+}
+.social-network .linkedin{
+    background-color: #1d87bd;
+    border-radius: 2vw;
+}
+.social-network .whatsapp{
+    background-color: rgb(32, 245, 139);
+    border-radius: 2vw;
+}
+.social-network .curriculum{
+    background-color: #06c185;
+    border-radius: 2vw;
+}

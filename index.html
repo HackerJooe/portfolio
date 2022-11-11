@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/index.css">
+   
+    <title>Mini-Portfólio</title>
+    <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Condensed:ital,wght@1,300&family=VT323&display=swap');
+
+    </style>
+    <script >
+        function mostrar(){
+            for(var i=1;i<3;i++){
+                document.getElementById("aba"+i).hidden = true;
+            }
+            var obj=event.target.dataset.nome;
+            document.getElementById(obj).hidden=false;
+        }
+        function inicia(){
+            for(var i=1;i<3;i++){
+                document.getElementById("aba"+i).hidden = true;
+            }
+            document.getElementById("profile").addEventListener("click",mostrar);
+            document.getElementById("netw").addEventListener("click",mostrar);
+            
+        }
+        document.documentElement.className = 'light';
+            var theme = "light";
+            function switchTheme(){
+                if(theme === 'dark'){
+                    document.documentElement.className = 'light';
+                    theme = 'light';
+                } else {
+                    document.documentElement.className = 'dark';
+                    theme = 'dark';
+                }
+
+            }
+        window.addEventListener("load",inicia);
+    </script>
+    
+</head>
+<body>  
+    <div class="container">
+        <ul>
+            <li><button id="style-button" onclick="switchTheme()">Trocar Tema</button></li>
+        </ul>
+    </div>
+    <main class="card"> <!--Cartão-->
+        <div class="my-information"> <!--Minhas Informações-->
+            <img src="./src/img/messias-junior.jpg" alt="profile-picture"> <!--Foto de Perfil-->
+            <h1 class="name">Messias Paulino Junior</h1> <!--Titulo Primario-->
+            <h2 class="position">Desenvolvedor Front-End Júnior</h2> <!--Titulo Secundario-->
+            <h3 class="theme">Portal para Comunicação</h3>
+        </div>
+        <div class="content"> <!--Contéudo-->
+            <ul class="tabs"> <!--Abas-->
+                <li class="tab" id="profile" data-nome="aba1" onclick="mostrar">
+                    <img src="src/img/id.gif" alt="identity-profile" data-nome="aba1" onclick="mostrar"> <!--Imagem das abas-->
+                </li>
+                <li class="tab" id="netw" data-nome="aba2" onclick="mostrar">
+                    <img src="src/img/heart.gif" alt="networks-to-contact" data-nome="aba2" onclick="mostrar"> <!--Imagem das abas-->
+                </li>
+            </ul>
+
+            <div class="info-tabs"> <!--Informações das Abas-->
+                <div class="information" id="aba1" >
+                    <h3 class="sub-title">Sobre</h3> 
+
+                    <div class="description">
+                        <p>Olá! Meu nome é Messias Paulino Junior, e sejam bem vindos(as) ao meu cartão de visita!</p>
+
+                        <p>
+                            Sou uma pessoa guiada pela programação e procuro aplicar a programação em todos os passos e areas da vida, assim tambem acabo aprendendo bastante e sempre pensando fora da caixa. E procuro estudar afinco uma linguagem de cada vez, para assim ter um dominio mais preciso sobre elas, e atualmente ja possuo experiencia com <span>HTML, CSS e JavaScript</span>. Gosto muito de café, meus hobbies são acampar, praticar artes marciais, assistir animes e séries e adquirir conhecimento de programação.
+                        </p>
+                    </div>
+                </div>
+
+                
+                <div class="information" id="aba2"> 
+                    <h3 class="sub-title">Minhas Redes para Contato</h3>
+
+                    <ul class="social-network">
+                        <li>
+                            <a href="https://github.com/HackerJooe" target="_blank" class="github">GitHub Generic Name</a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/messias-paulino-junior-0b2bb3252" target="_blank" class="linkedin">Linkedin</a>
+                        </li>
+                        <li>
+                            <a href="https://linkwhats.app/8e79a4" target="_blank"
+                            class="whatsapp">Whatsapp</a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank" class="curriculum">Curriculum</a>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>          
+        </div>   
+    </main>
+</body>
+</html>
